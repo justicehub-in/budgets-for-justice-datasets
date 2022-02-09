@@ -12,7 +12,7 @@
 
 This repository contains scripts to update the union budget datasets, uploaded on the Justice Hub, with data released as part of the union budget for 2022-23. 
 
-1. [scripts/]("scripts/") - For scripts
+1. [scripts/](scripts/) - For scripts
 2. [process](process.md) - Steps taken to update the budget datasets
 
 
