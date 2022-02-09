@@ -1,7 +1,7 @@
 <h1 align="center">Budgets for Justice</h1>
 <p align="center">An initiative by <a href="https://justicehub.in/">Justice Hub</a> and <a href="https://civis.vote/">Civis</a></p>
 <p align="center">
-<a href="https://github.com/justicehub-in/budgetsbudgets-for-justice-datasets/blob/main/LICENSE">
+<a href="https://github.com/justicehub-in/budgets-for-justice-datasets/blob/main/LICENSE">
 <img alt="GNU Affero General Public License v3.0" src="https://img.shields.io/badge/License-AGPL_v3-blue.svg"/>
 </a>
 </p>
@@ -9,9 +9,8 @@
 
 ---
 
-```
+
 This repository contains scripts to update the union budget datasets, uploaded on the Justice Hub, with data released as part of the union budget for 2022-23. 
-```
 
 1. [scripts/]("scripts/") - For scripts
 2. [process](process.md) - Steps taken to update the budget datasets
