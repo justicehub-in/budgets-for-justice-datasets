@@ -2,7 +2,13 @@
 .Rhistory
 .RData
 .Ruserdata
-datasets/
+datasets/union-budget/scheme*
+datasets/union-budget/department*
+datasets/union-budget/ministry*
+datasets/union-budget/data_2022*
+datasets/union-budget/master-file/*.zip
+datasets/union-budget/master-file/*.xlsx
+datasets/union-budget/*.pdf
 design/
 logistics/
 Budget-Toolkit-Final-211013.pdf
