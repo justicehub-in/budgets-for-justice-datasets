@@ -8,11 +8,25 @@ master_file_dir <- "datasets/union-budget/master-file/"
 data_dir <- "datasets/union-budget/"
 
 source("scripts/update_indicators.R")
+source("scripts/source-files.R")
 
 all_datasets <- dir(data_dir)
 scheme_datasets <- all_datasets[grepl("scheme-",all_datasets,ignore.case = TRUE)]
 scheme_datasets <- scheme_datasets[!grepl("category",scheme_datasets,ignore.case = TRUE)]
 
+
+# Include scheme categories that are part of the master sheet -------------
+
+include_categories <-
+  c(
+    "scheme-category-administration-of-justice",
+    "scheme-category-grants-in-aid-state-law",
+    "scheme-category-grants-in-aid-state-police",
+    "scheme-category-grants-in-aid-ut-law",
+    "scheme-category-grants-in-aid-ut-police"
+  )
+
+scheme_datasets <- c(scheme_datasets, include_categories)
 
 # Create a master dataset of all metadata files ---------------------------
 
@@ -37,9 +51,12 @@ for (i in 1:length(scheme_datasets)) {
     indicatorName[!is.na(indicatorName)] %>% stringr::str_squish()
   indicatorName <- indicatorName[nchar(indicatorName) > 0]
   totalIndicators <- length(indicatorName)
-  total_datasets <-
+  # Check if updated datasheet exists
+  
+  datasets_present <-
     dir(glue::glue("{data_dir}{scheme_datasets[[i]]}/"))
-  if (length(total_datasets) > 2) {
+  
+  if (TRUE %in% grepl(pattern = "u_datasheet",x = datasets_present,ignore.case = TRUE)) {
     dataset_path <-
       glue::glue("{data_dir}{scheme_datasets[[i]]}/u_datasheet.csv")
   } else {
@@ -134,49 +151,49 @@ for(i in 1:length(category_list)){
   master_combined <- dplyr::bind_rows(master_combined, category_file)
 }
 
-
-# Create JH Links file ----------------------------------------------------
-
-jh_links <<- readr::read_csv("datasets/union-budget/master-file/jh-links.csv",col_types = cols())
-jh_links$schemeID <- NULL
-jh_links$file_title <- NULL
-jh_links <- left_join(jh_links, meta_master[,c("schemeName","schemeID")], by=c("DatasetFor"="schemeName"), keep=FALSE)
-jh_links <- jh_links[jh_links$Type=="Scheme",]
-jh_links <- jh_links[!is.na(jh_links$JHURL),]
-jh_links$file_title <- ""
-
-# schemeID <- "P9"
+# schemeID <- "W12"
 
 update_data <- function(schemeID){
   print(glue::glue("Processing Scheme -- {schemeID} \n "))
   scheme_file_path <-   meta_master$datasetPath[meta_master$schemeID==schemeID]
   scheme_file <- readr::read_csv(scheme_file_path, col_types = cols())
-  scheme_file$value <- as.character(scheme_file$value)
-  indicators <- unique(scheme_file$indicators)
-  budgetFor <- meta_master$schemeName[meta_master$schemeID==schemeID]
-  type <- "scheme"
-  indicator_master <- c()
-  for(i in 1:length(indicators)){
-    indicator_name <- indicators[i]
-    indicator_df <- switch (indicator_name,
-            "Budget Estimates" = update_budget_estimates(schemeID),
-            "Revised Estimates" = update_revised_estimate(schemeID),
-            "Actual Expenditure" = update_actual_expenditure(schemeID),
-            "Actual Expenditure as a % of Ministry" = update_actual_expenditure_as_percent(schemeID),
-            "Fund Utilisation" = update_fund_utilisation_percent(schemeID)
-            )
-    indicator_master <- dplyr::bind_rows(indicator_master,indicator_df)
+  
+  # Only update those files where data for 2022-23 has not been udpates
+  if(!"2022-2023" %in% scheme_file$fiscalYear){
     
+    scheme_file$value <- as.character(scheme_file$value)
+    indicators <- unique(scheme_file$indicators)
+    budgetFor <- meta_master$schemeName[meta_master$schemeID==schemeID]
+    type <- jh_links$Type[jh_links$schemeID==schemeID]
+    indicator_master <- c()
+    for(i in 1:length(indicators)){
+      indicator_name <- indicators[i]
+      indicator_df <- switch (indicator_name,
+              "Budget Estimates" = update_budget_estimates(schemeID),
+              "Revised Estimates" = update_revised_estimate(schemeID),
+              "Actual Expenditure" = update_actual_expenditure(schemeID),
+              "Actual Expenditure as a % of Ministry" = update_actual_expenditure_as_percent(schemeID),
+              "Actual Expenditure as a % of Department" = update_actual_expenditure_as_percent(schemeID),
+              "Fund Utilisation" = update_fund_utilisation_percent(schemeID)
+              )
+      indicator_master <- dplyr::bind_rows(indicator_master,indicator_df)
+      
+    }
+      indicator_master$budgetFor <- budgetFor
+      indicator_master$type <- type
+      scheme_file_updated <- dplyr::bind_rows(scheme_file, indicator_master)
+      
+  } else {
+      scheme_file_updated <- scheme_file
+      scheme_file_updated$value <- as.character(scheme_file_updated$value)
   }
-    indicator_master$budgetFor <- budgetFor
-    indicator_master$type <- type
-    scheme_file_updated <- dplyr::bind_rows(scheme_file, indicator_master)
+  
     updated_file_path <- stringr::str_split_fixed(scheme_file_path,pattern = "/",n = 4)
     dataset_title <- updated_file_path[[3]]
-    updated_file_path <- glue::glue("{updated_file_path[[1]]}/{updated_file_path[[2]]}/data_2022_23/scheme_datasets/{dataset_title}.csv")
+    updated_file_path <- glue::glue("{updated_file_path[[1]]}/{updated_file_path[[2]]}/data_2022_23/update-100222/{dataset_title}.csv")
+    readr::write_csv(x = scheme_file_updated,file = updated_file_path)
     jh_links$file_title[jh_links$schemeID==schemeID] <<- glue::glue("{dataset_title}.csv")
     print(glue("{jh_links$file_title[jh_links$schemeID==schemeID]} \n"))
-    readr::write_csv(x = scheme_file_updated,file = updated_file_path)
     scheme_file_updated$schemeID <- schemeID
     return(scheme_file_updated) 
 }
@@ -187,5 +204,5 @@ update_data <- function(schemeID){
 updated_datasets <- lapply(meta_master$schemeID, update_data) %>% dplyr::bind_rows()
 readr::write_csv(updated_datasets, "datasets/union-budget/data_2022_23/updated_datasets.csv")
 
-readr::write_csv(jh_links,"datasets/union-budget/master-file/jh-links.csv")
+readr::write_csv(jh_links,"datasets/union-budget/master-file/jh-links-file-title.csv")
 
