@@ -10,3 +10,11 @@
 8. The new scheme datasets are exported in a common directory.
 9. The file [jh_links](datasets/union-budget/master-file/jh_links.csv) was created to store the mapping between the title of the scheme file and the Justice Hub URL of the file. This was done so the current datasets can be updated with the new ones from the backend.
 10. The exported files (`jh_links` and the `individual scheme files`) were zipped and uploaded on drive [here](https://drive.google.com/drive/folders/1-lmO3y41xkpLE8McxD4ardiCD8-BRRZ7?usp=sharing)
+
+---
+
+**Note**
+
+1. To run the scripts, you should have access to the master files and the data files for every scheme for which the dataset needs to be updated.
+2. The schemeID should be consistent in the master sheet and the metadata of the scheme file.
+3. The state of the master sheet on Google Drive and the ones on this repository should be same to avoid any errors.
