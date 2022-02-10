@@ -8,7 +8,7 @@
 6. Similarly, the master file for all ministries/departments was combined in a single dataframe.
 7. The function `update_data` in the file [update_data_union_budget_2022.R](scripts/update_data_union_budget_2022.R) is used to create a file for each scheme for all the new indicators and append it to the existing file for that scheme.
 8. The new scheme datasets are exported in a common directory.
-9. The file [jh_links](datasets/union-budget/master-file/jh_links.csv) was created to store the mapping between the title of the scheme file and the Justice Hub URL of the file. This was done so the current datasets can be updated with the new ones from the backend.
+9. The file [jh_links](https://github.com/justicehub-in/budgets-for-justice-datasets/blob/main/datasets/union-budget/master-file/jh-links-file-title.csv) was created to store the mapping between the title of the scheme file and the Justice Hub URL of the file. This was done so the current datasets can be updated with the new ones from the backend.
 10. The exported files (`jh_links` and the `individual scheme files`) were zipped and uploaded on drive [here](https://drive.google.com/drive/folders/1-lmO3y41xkpLE8McxD4ardiCD8-BRRZ7?usp=sharing)
 
 ---
