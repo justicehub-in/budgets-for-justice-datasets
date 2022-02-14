@@ -19,7 +19,6 @@ scheme_datasets <- scheme_datasets[!grepl("category",scheme_datasets,ignore.case
 
 include_categories <-
   c(
-    "scheme-category-administration-of-justice",
     "scheme-category-grants-in-aid-state-law",
     "scheme-category-grants-in-aid-state-police",
     "scheme-category-grants-in-aid-ut-law",
