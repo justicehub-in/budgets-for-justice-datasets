@@ -23,6 +23,12 @@ find_dataset_links <- function(org_id){
       "package_id" = purrr::map(org_details$packages, "id") %>% unlist(),
       "title" = purrr::map(org_details$packages, "title") %>% unlist()
     )
+  org_title <- org_details$title
+  package_info$budget_for <-
+    stringr::str_replace_all(package_info$title,
+                             pattern = org_title,
+                             replacement = "") %>% stringr::str_replace_all(pattern = ":", replacement = "") %>% stringr::str_squish()
+  
   
   grep_string <- package_info$title[grepl(package_info$title,pattern = ("Jails|Police|Justice"), ignore.case = TRUE)]
   package_info <- package_info[package_info$title %in% grep_string,]
