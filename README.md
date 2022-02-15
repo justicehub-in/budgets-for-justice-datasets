@@ -9,12 +9,14 @@
 
 ---
 
+This repository contains:
+1. Scripts to update the union datasets, uploaded on the Justice Hub, with data released as part of the union budget for 2022-23.
+2. Scripts for processing state budget datasets for the [Budgets for Justice](https://budgets.justicehub.in/datasets) portal.
 
-This repository contains scripts to update the union budget datasets, uploaded on the Justice Hub, with data released as part of the union budget for 2022-23. 
 
-1. [scripts/](scripts/) - For scripts
-2. [process](process.md) - Steps taken to update the budget datasets
-
+1. [scripts/](scripts/) - Scripts for processing budget datasets for union and state governments.
+2. [docs/process*](docs/) - Data processing documentation for union and state budgets.
+3. [datasets/](datasets/) - Contains raw files for union budget datasets and dataset summary files for state budget datasets.  
 
 ## Contributing
 
