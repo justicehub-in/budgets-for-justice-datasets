@@ -9,6 +9,7 @@ datasets/union-budget/data_2022*
 datasets/union-budget/master-file/*.zip
 datasets/union-budget/master-file/*.xlsx
 datasets/union-budget/*.pdf
+datasets/state-budgets/assam/raw-files/
 design/
 logistics/
 Budget-Toolkit-Final-211013.pdf
