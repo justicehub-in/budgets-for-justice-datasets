@@ -1,6 +1,8 @@
 
 ## Budgets for Justice - State Budgets
 
+### Context
+
 The state budget datasets are crucial if one has to analyse the flow of funds in areas specific to law and justice. They contain a lot more info about how and where the funds will be spent or are spent in any financial year. Analysing state budget documents is difficult because:
 
 1. The documents are rarely available in machine-readable formats.
