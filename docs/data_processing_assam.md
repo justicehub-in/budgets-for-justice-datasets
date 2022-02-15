@@ -22,8 +22,8 @@ A time-series graph for all budget heads which include the Budget, Revised and A
 2. In the past, we have developed [budget explorers](https://assam2019.openbudgetsindia.org/en/expenditure/all-grants/grant-no-3-administration-of-justice/) through which a user can explore the entire hierarchy for each head. 
 3. Since the budget heads at all levels are not consistent between years, it's hard to compare the budget across years for heads that don't match. 
 4. This [file](https://github.com/justicehub-in/budgets-for-justice-datasets/blob/main/datasets/state-budgets/assam/level_summary.csv) details the consistency in budget heads across years. As evident from the file, the percentage of common heads reduces as we move from a Level 2 (combining the first two heads) to L10 (combining all heads). _[Google Sheet](https://docs.google.com/spreadsheets/d/1eaCiyHIecujo0-waPDk4szL6icWT1RBmdoC6aIhEvsc/edit#gid=2078597767)_
-5. On an average, **50% of the heads match at Level 5** for Jails, Justice, and Police related heads.
-6. This [file](https://docs.google.com/spreadsheets/d/1hLXxg7GsLiXShRDfTvE0PByj4u3B9MdoeMSGQFXwJg0/edit#gid=724407876) includes details about the  heads that match or not at each level. 
+5. On an average, **50% of the heads match at Level 5 (till Detailed head)** for Jails, Justice, and Police related heads.
+6. This [file](https://docs.google.com/spreadsheets/d/1hLXxg7GsLiXShRDfTvE0PByj4u3B9MdoeMSGQFXwJg0/edit#gid=724407876) includes details about the heads at each level and whether they are repeated across years. 
 
 
 
