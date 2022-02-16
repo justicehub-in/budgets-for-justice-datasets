@@ -47,19 +47,117 @@ readr::write_csv(unique_cols_df,"datasets/state-budgets/assam/cols_across_years.
 
 # Compare budget heads across years ---------------------------------------
 
-all_budget_heads <- get_budget_heads
+all_budget_heads <- get_budget_heads()
 
 combined_heads <-
   all_budget_heads %>% mutate(
-    level_2 = paste0(`Major Head`,"__",`Sub-Major Head`),
-    level_3 = paste0(`Major Head`,"__",`Sub-Major Head`,"__",`Minor Head`),
-    level_4 = paste0(`Major Head`,"__",`Sub-Major Head`,"__",`Minor Head`,"__",`Sub-Minor Head`),
-    level_5 = paste0(`Major Head`,"__",`Sub-Major Head`,"__",`Minor Head`,"__",`Sub-Minor Head`,"__",`Detailed Head`),
-    level_6 = paste0(`Major Head`,"__",`Sub-Major Head`,"__",`Minor Head`,"__",`Sub-Minor Head`,"__",`Detailed Head`,"__",`Object Head`),
-    level_7 = paste0(`Major Head`,"__",`Sub-Major Head`,"__",`Minor Head`,"__",`Sub-Minor Head`,"__",`Detailed Head`,"__",`Object Head`,"__",`Voucher Head`),
-    level_8 = paste0(`Major Head`,"__",`Sub-Major Head`,"__",`Minor Head`,"__",`Sub-Minor Head`,"__",`Detailed Head`,"__",`Object Head`,"__",`Voucher Head`,"__",`Scheme`),
-    level_9 = paste0(`Major Head`,"__",`Sub-Major Head`,"__",`Minor Head`,"__",`Sub-Minor Head`,"__",`Detailed Head`,"__",`Object Head`,"__",`Voucher Head`,"__",`Scheme`,"__",`Area`),
-    level_10 = paste0(`Major Head`,"__",`Sub-Major Head`,"__",`Minor Head`,"__",`Sub-Minor Head`,"__",`Detailed Head`,"__",`Object Head`,"__",`Voucher Head`,"__",`Scheme`,"__",`Area`,"__",`Voted/Charged`)
+    level_2 = paste0(`Major Head`, "__", `Sub-Major Head`) %>% stringr::str_to_lower() %>% stringr::str_squish(),
+    level_3 = paste0(`Major Head`, "__", `Sub-Major Head`, "__", `Minor Head`) %>% stringr::str_to_lower() %>% stringr::str_squish(),
+    level_4 = paste0(
+      `Major Head`,
+      "__",
+      `Sub-Major Head`,
+      "__",
+      `Minor Head`,
+      "__",
+      `Sub-Minor Head`
+    ) %>% stringr::str_to_lower() %>% stringr::str_squish(),
+    level_5 = paste0(
+      `Major Head`,
+      "__",
+      `Sub-Major Head`,
+      "__",
+      `Minor Head`,
+      "__",
+      `Sub-Minor Head`,
+      "__",
+      `Detailed Head`
+    ) %>% stringr::str_to_lower() %>% stringr::str_squish(),
+    level_6 = paste0(
+      `Major Head`,
+      "__",
+      `Sub-Major Head`,
+      "__",
+      `Minor Head`,
+      "__",
+      `Sub-Minor Head`,
+      "__",
+      `Detailed Head`,
+      "__",
+      `Object Head`
+    ) %>% stringr::str_to_lower() %>% stringr::str_squish(),
+    level_7 = paste0(
+      `Major Head`,
+      "__",
+      `Sub-Major Head`,
+      "__",
+      `Minor Head`,
+      "__",
+      `Sub-Minor Head`,
+      "__",
+      `Detailed Head`,
+      "__",
+      `Object Head`,
+      "__",
+      `Voucher Head`
+    ) %>% stringr::str_to_lower() %>% stringr::str_squish(),
+    level_8 = paste0(
+      `Major Head`,
+      "__",
+      `Sub-Major Head`,
+      "__",
+      `Minor Head`,
+      "__",
+      `Sub-Minor Head`,
+      "__",
+      `Detailed Head`,
+      "__",
+      `Object Head`,
+      "__",
+      `Voucher Head`,
+      "__",
+      `Scheme`
+    ) %>% stringr::str_to_lower() %>% stringr::str_squish(),
+    level_9 = paste0(
+      `Major Head`,
+      "__",
+      `Sub-Major Head`,
+      "__",
+      `Minor Head`,
+      "__",
+      `Sub-Minor Head`,
+      "__",
+      `Detailed Head`,
+      "__",
+      `Object Head`,
+      "__",
+      `Voucher Head`,
+      "__",
+      `Scheme`,
+      "__",
+      `Area`
+    ) %>% stringr::str_to_lower() %>% stringr::str_squish(),
+    level_10 = paste0(
+      `Major Head`,
+      "__",
+      `Sub-Major Head`,
+      "__",
+      `Minor Head`,
+      "__",
+      `Sub-Minor Head`,
+      "__",
+      `Detailed Head`,
+      "__",
+      `Object Head`,
+      "__",
+      `Voucher Head`,
+      "__",
+      `Scheme`,
+      "__",
+      `Area`,
+      "__",
+      `Voted/Charged`
+    ) %>% stringr::str_to_lower() %>% stringr::str_squish()
   )
 
 combined_heads$budget_for <- stringr::str_replace_all(string = combined_heads$file_id,pattern = "assam-budget.*_",replacement = "")
