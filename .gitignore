@@ -10,6 +10,7 @@ datasets/union-budget/master-file/*.zip
 datasets/union-budget/master-file/*.xlsx
 datasets/union-budget/*.pdf
 datasets/state-budgets/assam/raw-files/
+datasets/state-budgets/assam/processed-files/
 design/
 logistics/
 Budget-Toolkit-Final-211013.pdf
