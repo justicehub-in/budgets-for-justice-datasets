@@ -54,15 +54,56 @@ download_files <- function(package_id){
   readr::write_csv(x = budget_csv,file = file_to_save)
 }
 
+
+# Create cols for budget head IDs for 2018 --------------------------------
+
+create_2018_heads <- function(){
+  raw_file_path <- "datasets/state-budgets/assam/raw-files/"
+  processed_file_path <- "datasets/state-budgets/assam/processed-files/"
+  all_raw_files <- dir(raw_file_path)
+  raw_files_2018 <- all_raw_files[grepl(x = all_raw_files,pattern = "2018")]
+  for(i in 1:length(raw_files_2018)){
+    print(glue::glue("Processing -- {raw_files_2018[[i]]}"))
+    file_path <- glue::glue("{raw_file_path}{raw_files_2018[[i]]}")
+    budget_csv <- readr::read_csv(file_path, col_types = cols())
+    budget_csv$row_id <- 1:nrow(budget_csv)
+    
+    head_of_account <- budget_csv[,c("row_id","Head Of Account")]
+    head_of_account$head_id_cols <- stringr::str_split(head_of_account$`Head Of Account`,pattern = "-",n = 8,simplify = TRUE) %>% data.frame()
+    head_of_account$head_id_cols$X81 <- str_extract(head_of_account$head_id_cols$X8,pattern = "EE|TG-FFC|SOPD-G|SOPD-SS|CSS|SOPD-ODS")
+    head_of_account$head_id_cols$X9 <- stringr::str_sub(head_of_account$head_id_cols$X8,start = -4,end = -3)
+    head_of_account$head_id_cols$X10 <- stringr::str_sub(head_of_account$head_id_cols$X8,start = -1,end = -1)
+    head_of_account$head_id_cols$X8 <- NULL  
+    head_of_account$head_id_cols$row_id <- head_of_account$row_id
+    head_of_account <- head_of_account$head_id_cols
+    names(head_of_account)[1:10] <- c(
+      "Major Head Code",
+      "Sub-Major Head Code",
+      "Minor Head Code",
+      "Sub-Minor Head Code",
+      "Detailed Head Code",
+      "Object Head Code",
+      "Voucher Head Code",
+      "Scheme Code",
+      "Area Code",
+      "Voted/Charged Code"
+    ) 
+    
+    budget_csv <- left_join(budget_csv, head_of_account, by="row_id", keep=FALSE)
+    budget_csv$row_id <- NULL
+    readr::write_csv(budget_csv,glue::glue("{processed_file_path}/{raw_files_2018[[i]]}"))
+}
+}
+
 # Get all columns ---------------------------------------------------------
 
 get_all_cols <- function(){
   
-  raw_file_path <- "datasets/state-budgets/assam/raw-files/"
-  all_raw_files <- dir(raw_file_path) 
+  processed_file_path <- "datasets/state-budgets/assam/processed-files/"
+  all_processed_files <- dir(processed_file_path) 
   master_cols_df <- c()
-  for(i in 1:length(all_raw_files)){
-    file_path <- glue::glue("{raw_file_path}{all_raw_files[[i]]}")
+  for(i in 1:length(all_processed_files)){
+    file_path <- glue::glue("{processed_file_path}{all_processed_files[[i]]}")
     budget_csv <- readr::read_csv(file_path, col_types = cols())
     csv_cols <- names(budget_csv)
     cols_df <- data.frame("file_id"=all_raw_files[[i]],col_names=csv_cols)  
@@ -70,6 +111,8 @@ get_all_cols <- function(){
   }
   return(master_cols_df)
 }
+
+
 
 # Get all budget heads ----------------------------------------------------
 
@@ -87,15 +130,43 @@ budget_head_cols <-
     "Voted/Charged"
   )
 
+budget_head_id_cols <- c(
+  "Major Head Code",
+  "Sub-Major Head Code",
+  "Minor Head Code",
+  "Sub-Minor Head Code",
+  "Detailed Head Code",
+  "Object Head Code",
+  "Voucher Head Code",
+  "Scheme Code",
+  "Area Code",
+  "Voted/Charged Code"
+)
+
 get_budget_heads <- function(){
-  raw_file_path <- "datasets/state-budgets/assam/raw-files/"
-  all_raw_files <- dir(raw_file_path) 
+  file_path <- "datasets/state-budgets/assam/processed-files/"
+  all_files <- dir(file_path) 
   master_heads_df <- c()
-  for(i in 1:length(all_raw_files)){
-    file_path <- glue::glue("{raw_file_path}{all_raw_files[[i]]}")
-    budget_csv <- readr::read_csv(file_path, col_types = cols())
-    budget_heads <- budget_csv[,budget_head_cols]
-    budget_heads$file_id <- all_raw_files[[i]]
+  for(i in 1:length(all_files)){
+    file_path_i <- glue::glue("{file_path}{all_files[[i]]}")
+    budget_csv <- readr::read_csv(file_path_i, col_types = cols(.default = "c"))
+    budget_heads <-
+      budget_csv[, c(budget_head_cols, budget_head_id_cols)]
+    budget_heads$row_id <- 1:nrow(budget_heads)
+    # Convert budget head ID cols to numeric so we can compare "01" and "1"
+    
+    for(j in 1:length(budget_head_id_cols)){
+      id_col_j <-
+        budget_heads[, c("row_id", budget_head_id_cols[[j]])] %>% data.frame(check.names = FALSE)
+      id_col_j$numeric_id <- id_col_j[,2] %>% as.numeric 
+      id_col_j$numeric_id[is.na(id_col_j$numeric_id)] <-
+        id_col_j[is.na(id_col_j$numeric_id), 2]
+      budget_heads <- left_join(budget_heads,id_col_j[,c(1,3)], by="row_id", keep=FALSE)
+      budget_heads[,c(budget_head_id_cols[[j]])] <- NULL
+      names(budget_heads)[which(names(budget_heads)=="numeric_id")] <- budget_head_id_cols[[j]]
+    }
+    
+    budget_heads$file_id <- all_files[[i]]
     master_heads_df <- bind_rows(master_heads_df, budget_heads)
   }
   return(master_heads_df)
