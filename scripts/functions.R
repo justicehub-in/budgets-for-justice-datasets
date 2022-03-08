@@ -149,9 +149,10 @@ get_budget_heads <- function(){
     file_path_i <- glue::glue("{file_path}{all_files[[i]]}")
     budget_csv <- readr::read_csv(file_path_i, col_types = cols(.default = "c"))
     indicator_heads <-
-      names(budget_csv)[grepl(pattern = "actual|estimates",
+      names(budget_csv)[grepl(pattern = "actual|revised|budget",
                               x = names(budget_csv),
                               ignore.case = TRUE)]
+    indicator_heads <- indicator_heads[!indicator_heads %in% "Budget Entity"]
     budget_heads <-
       budget_csv[, c(budget_head_cols, budget_head_id_cols, indicator_heads)]
     
