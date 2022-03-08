@@ -324,7 +324,7 @@ for(i in 1:length(all_categories)){
   }
   
 readr::write_csv(master_head_level_df,"datasets/state-budgets/assam/code_level_summary.csv")
-readr::write_csv(all_year_status,"datasets/state-budgets/assam/comparing_head_cods_across_years.csv")
+readr::write_csv(all_year_status,"datasets/state-budgets/assam/comparing_head_codes_across_years.csv")
 readr::write_csv(combined_heads,"datasets/state-budgets/assam/all_heads_list.csv")
 
 
