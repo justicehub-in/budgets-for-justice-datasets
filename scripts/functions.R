@@ -112,8 +112,6 @@ get_all_cols <- function(){
   return(master_cols_df)
 }
 
-
-
 # Get all budget heads ----------------------------------------------------
 
 budget_head_cols <-
@@ -150,8 +148,15 @@ get_budget_heads <- function(){
   for(i in 1:length(all_files)){
     file_path_i <- glue::glue("{file_path}{all_files[[i]]}")
     budget_csv <- readr::read_csv(file_path_i, col_types = cols(.default = "c"))
+    indicator_heads <-
+      names(budget_csv)[grepl(pattern = "actual|estimates",
+                              x = names(budget_csv),
+                              ignore.case = TRUE)]
     budget_heads <-
-      budget_csv[, c(budget_head_cols, budget_head_id_cols)]
+      budget_csv[, c(budget_head_cols, budget_head_id_cols, indicator_heads)]
+    
+    names(budget_heads)[c(21:24)] <- c("actuals","estimate_py","revised_py","estimate_cy")
+    
     budget_heads$row_id <- 1:nrow(budget_heads)
     # Convert budget head ID cols to numeric so we can compare "01" and "1"
     
