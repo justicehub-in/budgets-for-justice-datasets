@@ -16,7 +16,7 @@ The state budget datasets are crucial if one has to analyse the flow of funds in
 A time-series graph for all budget heads which include the Budget, Revised and Actual amounts. 
 
 
-### Which heads to include
+### Which heads to include - Checking by Head Title
 
 1. The state budget data is more hierarchical than union budget data. The hierarchy is as follows  - ```Major Head > Sub-Major Head > Minor Head > Sub-Minor Head > Detailed Head > Object Head > Voucher Head > Scheme > Area > Voted/Charged```
 2. In the past, we have developed [budget explorers](https://assam2019.openbudgetsindia.org/en/expenditure/all-grants/grant-no-3-administration-of-justice/) through which a user can explore the entire hierarchy for each head. 
@@ -25,6 +25,26 @@ A time-series graph for all budget heads which include the Budget, Revised and A
 5. On an average, **55% of the heads match at Level 5 (till Detailed head)** for Jails, Justice, and Police related heads.
 6. This [file](https://docs.google.com/spreadsheets/d/16fl7icGznIEgJQ_g5MQTiqgROiDB9cwGXgC-oiFh024/edit#gid=414449477) includes details about the heads at each level and whether they are repeated across years. 
 
+
+### Checking by Head Code
+
+1. We observe more consistency in budget heads when we use codes instead of using titles
+2. Overall coverage for each major head at each level is documented [here](https://github.com/justicehub-in/budgets-for-justice-datasets/blob/main/datasets/state-budgets/assam/code_level_summary.csv)
+3. The consistency in heads varies among revenue and capital related heads. There is more consistency in budget head codes for Revenue Heads.
+4. Since we observed a good coverage till Level 6, we are only including those heads in our analysis that match till Level 6
+5. The coverage (in percentage) for each major head till level 6 is as follows: 
+
+|category | major_head| level_2_code| level_3_code| level_4_code| level_5_code| level_6_code|
+|:--------|----------:|------------:|------------:|------------:|------------:|------------:|
+|jails    |       2056|          100|        80.00|        75.00|        70.00|        81.67|
+|jails    |       4059|          100|        50.00|        60.00|        55.56|        55.56|
+|justice  |       2014|          100|        83.33|        90.91|        83.33|        77.27|
+|justice  |       2041|          100|       100.00|       100.00|       100.00|        62.50|
+|justice  |       2230|          100|       100.00|       100.00|       100.00|        85.19|
+|justice  |       4059|          100|        50.00|        42.86|        20.83|        20.83|
+|justice  |       4216|          100|        66.67|        66.67|        50.00|        50.00|
+|police   |       2055|          100|        92.31|        93.65|        60.00|        50.00|
+|police   |       4055|          100|       100.00|        37.50|        23.91|        20.41|
 
 
 
