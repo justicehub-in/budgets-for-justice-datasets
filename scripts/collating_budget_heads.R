@@ -120,3 +120,5 @@ code_level_summary_l6_wide <-
   )
 
 readr::write_csv(code_level_summary_l6_wide, "datasets/state-budgets/assam/major_head_coverage.csv")
+
+knitr::kable(code_level_summary_l6_wide,format = "pipe") %>% clipr::write_clip()
