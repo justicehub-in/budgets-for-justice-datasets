@@ -46,12 +46,13 @@ for(j in 1:length(all_levels)){
     print(print_string)
     budget_data <- all_heads[all_heads[,level_j] == level_codes_k & all_heads$budget_for == cat_i,]
     level_col <- stringr::str_replace(level_j,pattern = "_code",replacement = "")
-    budget_cols <- c("budget_for","year", level_j,"actuals","estimate_py","revised_py","estimate_cy")
+    budget_cols <- c("budget_for","year", level_col,level_j,"actuals","estimate_py","revised_py","estimate_cy")
     budget_data_sub <- budget_data[,budget_cols]
     names(budget_data_sub)[] <-
       c(
         "budget_for",
         "year",
+        "head_title",
         "level_code",
         "actuals",
         "estimate_py",
@@ -63,7 +64,7 @@ for(j in 1:length(all_levels)){
     budget_data_sub$revised_py <- as.numeric(budget_data_sub$revised_py)
     budget_data_sub$estimate_cy <- as.numeric(budget_data_sub$estimate_cy)
     budget_data_agg <-
-      budget_data_sub %>% group_by(budget_for, year, level_code) %>% summarise(
+      budget_data_sub %>% group_by(budget_for, year, head_title, level_code) %>% summarise(
         total_actuals = sum(actuals),
         total_estimate_py = sum(estimate_py),
         total_revised_py = sum(revised_py),
@@ -91,7 +92,12 @@ for(j in 1:length(all_levels)){
 }
 }
 
+# Removing rows where actual expenditure is NA -----------------------------------
 
-# Merging level titles with level codes -----------------------------------
+# In the year 2018-19, the same budget head code is present for two different budget heads
+# code is - 4059__1
+# We're removing all rows that start with this budget head and where the actual expenditure is NA. 
+# This will remove 5 rows from the final dataset
 
-
+budget_timeseries <- budget_timeseries[!is.na(budget_timeseries$total_actuals),]
+readr::write_csv(budget_timeseries,"datasets/state-budgets/assam/budget_timeseries.csv")
