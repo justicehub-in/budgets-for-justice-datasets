@@ -101,3 +101,22 @@ for(j in 1:length(all_levels)){
 
 budget_timeseries <- budget_timeseries[!is.na(budget_timeseries$total_actuals),]
 readr::write_csv(budget_timeseries,"datasets/state-budgets/assam/budget_timeseries.csv")
+
+
+# Update code level summary -----------------------------------------------
+
+code_level_summary <- readr::read_csv("datasets/state-budgets/assam/code_level_summary.csv", col_types = cols())
+
+# Only include till level 6
+code_level_summary_l6 <- code_level_summary[code_level_summary$level %in% paste0("level_",2:6,"_code"),]
+code_level_summary_l6$total_values <- NULL
+code_level_summary_l6$common_values <- NULL
+code_level_summary_l6_wide <-
+  pivot_wider(
+    data = code_level_summary_l6,
+    id_cols = c("category", "major_head"),
+    names_from = "level",
+    values_from = "percent_common"
+  )
+
+readr::write_csv(code_level_summary_l6_wide, "datasets/state-budgets/assam/major_head_coverage.csv")
