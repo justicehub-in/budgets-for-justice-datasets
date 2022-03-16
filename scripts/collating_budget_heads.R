@@ -99,7 +99,8 @@ for(j in 1:length(all_levels)){
 # We're removing all rows that start with this budget head and where the actual expenditure is NA. 
 # This will remove 5 rows from the final dataset
 
-budget_timeseries <- budget_timeseries[!is.na(budget_timeseries$total_actuals),]
+heads_to_remove <- budget_timeseries$level_code[is.na(budget_timeseries$total_actuals)]
+budget_timeseries <- budget_timeseries[!budget_timeseries$level_code %in% heads_to_remove,]
 readr::write_csv(budget_timeseries,"datasets/state-budgets/assam/budget_timeseries.csv")
 
 

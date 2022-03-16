@@ -3,10 +3,6 @@ jails,2018-19,jails__null,2056__0,6731.16,7681.81,8587.9,9754.04,level_2
 jails,2019-20,jails__null,2056__0,6976.360000000001,9754.04,10306.54,11388.56,level_2
 jails,2020-21,jails__null,2056__0,8140.1500000000005,11388.56,11596.31,9653,level_2
 jails,2021-22,jails__null,2056__0,8093.86,9653,9741.24,8975.2,level_2
-jails,2018-19,capital outlay on public works__office buildings,4059__1,0,716.34,716.34,1729.2,level_2
-jails,2019-20,capital outlay on public works__office buildings,4059__1,120.06,2529.2,2529.2,2321.14,level_2
-jails,2020-21,capital outlay on public works__office buildings,4059__1,725.22,2321.14,2321.14,1900,level_2
-jails,2021-22,capital outlay on public works__office buildings,4059__1,1708.78,1900,1900,2011.16,level_2
 jails,2018-19,jails__null__direction and administration,2056__0__1,243.5,558.03,593.89,744.78,level_3
 jails,2019-20,jails__null__direction and administration,2056__0__1,265.36,744.78,768.78,1101.65,level_3
 jails,2020-21,jails__null__direction and administration,2056__0__1,454.62,1101.65,1153.4,476.47,level_3
@@ -23,10 +19,6 @@ jails,2018-19,jails__null__other expenditure,2056__0__800,79.49,92.61,120.49,123
 jails,2019-20,jails__null__other expenditure,2056__0__800,81.47,123.24,123.24,162.17,level_3
 jails,2020-21,jails__null__other expenditure,2056__0__800,108.45,162.17,162.17,141.94,level_3
 jails,2021-22,jails__null__other expenditure,2056__0__800,113.25,141.94,141.94,129.68,level_3
-jails,2018-19,capital outlay on public works__office buildings__construction - general pool accommodation,4059__1__101,0,716.34,716.34,1729.2,level_3
-jails,2019-20,capital outlay on public works__office buildings__construction - general pool accommodation,4059__1__101,120.06,2529.2,2529.2,2321.14,level_3
-jails,2020-21,capital outlay on public works__office buildings__construction - general pool accommodation,4059__1__101,725.22,2321.14,2321.14,1900,level_3
-jails,2021-22,capital outlay on public works__office buildings__construction - general pool accommodation,4059__1__101,1708.78,1900,1900,0,level_3
 jails,2018-19,jails__null__direction and administration__head quarters establishment,2056__0__1__172,195.54000000000002,497.86,518.12,671.15,level_4
 jails,2019-20,jails__null__direction and administration__head quarters establishment,2056__0__1__172,209.98999999999998,671.15,695.15,1024.16,level_4
 jails,2020-21,jails__null__direction and administration__head quarters establishment,2056__0__1__172,401.95,1024.16,1064.16,387.58,level_4
@@ -55,9 +47,6 @@ jails,2018-19,capital outlay on public works__office buildings__construction - g
 jails,2019-20,capital outlay on public works__office buildings__construction - general pool accommodation__jails,4059__1__101__1484,81.09,1636.09,1636.09,2021.14,level_4
 jails,2020-21,capital outlay on public works__office buildings__construction - general pool accommodation__jails,4059__1__101__1484,658.39,2021.14,2021.14,1701.58,level_4
 jails,2021-22,capital outlay on public works__office buildings__construction - general pool accommodation__jails,4059__1__101__1484,1624.15,1701.58,1701.58,0,level_4
-jails,2019-20,capital outlay on public works__office buildings__construction - general pool accommodation__head quarters establishment,4059__1__101__172,3.2,800,800,200,level_4
-jails,2020-21,capital outlay on public works__office buildings__construction - general pool accommodation__head quarters establishment,4059__1__101__172,0,200,200,138.57,level_4
-jails,2021-22,capital outlay on public works__office buildings__construction - general pool accommodation__head quarters establishment,4059__1__101__172,0,138.57,138.57,0,level_4
 jails,2018-19,capital outlay on public works__office buildings__construction - general pool accommodation__district jails,4059__1__101__486,0,60,60,93.11,level_4
 jails,2019-20,capital outlay on public works__office buildings__construction - general pool accommodation__district jails,4059__1__101__486,35.77,93.11,93.11,100,level_4
 jails,2020-21,capital outlay on public works__office buildings__construction - general pool accommodation__district jails,4059__1__101__486,66.83,100,100,59.85,level_4
@@ -102,9 +91,6 @@ jails,2018-19,"capital outlay on public works__office buildings__construction - 
 jails,2019-20,"capital outlay on public works__office buildings__construction - general pool accommodation__jails__works (construction of 11 numbers of staff quarters & expenses on construction of prisoners barrack, kitchen, dining room, latrine, master drain, etc.)",4059__1__101__1484__770,64.53,1380.94,1380.94,1800,level_5
 jails,2020-21,"capital outlay on public works__office buildings__construction - general pool accommodation__jails__works (construction of 11 numbers of staff quarters & expenses on construction of prisoners barrack, kitchen, dining room, latrine, master drain, etc.)",4059__1__101__1484__770,515.71,1800,1800,1550.22,level_5
 jails,2021-22,"capital outlay on public works__office buildings__construction - general pool accommodation__jails__works (construction of 11 numbers of staff quarters & expenses on construction of prisoners barrack, kitchen, dining room, latrine, master drain, etc.)",4059__1__101__1484__770,1511.02,1550.22,1550.22,0,level_5
-jails,2019-20,capital outlay on public works__office buildings__construction - general pool accommodation__head quarters establishment__null,4059__1__101__172__0,3.2,800,800,200,level_5
-jails,2020-21,capital outlay on public works__office buildings__construction - general pool accommodation__head quarters establishment__null,4059__1__101__172__0,0,200,200,138.57,level_5
-jails,2021-22,capital outlay on public works__office buildings__construction - general pool accommodation__head quarters establishment__null,4059__1__101__172__0,0,138.57,138.57,0,level_5
 jails,2018-19,capital outlay on public works__office buildings__construction - general pool accommodation__district jails__null,4059__1__101__486__0,0,60,60,93.11,level_5
 jails,2019-20,capital outlay on public works__office buildings__construction - general pool accommodation__district jails__null,4059__1__101__486__0,35.77,93.11,93.11,100,level_5
 jails,2020-21,capital outlay on public works__office buildings__construction - general pool accommodation__district jails__null,4059__1__101__486__0,66.83,100,100,59.85,level_5
@@ -317,9 +303,6 @@ jails,2018-19,"capital outlay on public works__office buildings__construction - 
 jails,2019-20,"capital outlay on public works__office buildings__construction - general pool accommodation__jails__works (construction of 11 numbers of staff quarters & expenses on construction of prisoners barrack, kitchen, dining room, latrine, master drain, etc.)__major works",4059__1__101__1484__770__13,64.53,1380.94,1380.94,1800,level_6
 jails,2020-21,"capital outlay on public works__office buildings__construction - general pool accommodation__jails__works (construction of 11 numbers of staff quarters & expenses on construction of prisoners barrack, kitchen, dining room, latrine, master drain, etc.)__major works",4059__1__101__1484__770__13,515.71,1800,1800,1550.22,level_6
 jails,2021-22,"capital outlay on public works__office buildings__construction - general pool accommodation__jails__works (construction of 11 numbers of staff quarters & expenses on construction of prisoners barrack, kitchen, dining room, latrine, master drain, etc.)__major works",4059__1__101__1484__770__13,1511.02,1550.22,1550.22,0,level_6
-jails,2019-20,capital outlay on public works__office buildings__construction - general pool accommodation__head quarters establishment__null__major works,4059__1__101__172__0__13,3.2,800,800,200,level_6
-jails,2020-21,capital outlay on public works__office buildings__construction - general pool accommodation__head quarters establishment__null__major works,4059__1__101__172__0__13,0,200,200,138.57,level_6
-jails,2021-22,capital outlay on public works__office buildings__construction - general pool accommodation__head quarters establishment__null__major works,4059__1__101__172__0__13,0,138.57,138.57,0,level_6
 jails,2018-19,capital outlay on public works__office buildings__construction - general pool accommodation__district jails__null__major works,4059__1__101__486__0__13,0,60,60,93.11,level_6
 jails,2019-20,capital outlay on public works__office buildings__construction - general pool accommodation__district jails__null__major works,4059__1__101__486__0__13,35.77,93.11,93.11,100,level_6
 jails,2020-21,capital outlay on public works__office buildings__construction - general pool accommodation__district jails__null__major works,4059__1__101__486__0__13,66.83,100,100,59.85,level_6
@@ -336,10 +319,6 @@ justice,2018-19,labour & employment__labour,2230__1,273.35,464.06,464.06,431.94,
 justice,2019-20,labour & employment__labour,2230__1,327.03,431.94,444.47,440.41,level_2
 justice,2020-21,labour & employment__labour,2230__1,355.84000000000003,440.41,504.02,492.75,level_2
 justice,2021-22,labour & employment__labour,2230__1,425.38,492.75,493.05,585.87,level_2
-justice,2018-19,capital outlay on public works__office buildings,4059__1,0,7300,8100,7920,level_2
-justice,2019-20,capital outlay on public works__office buildings,4059__1,4573.46,7920,10872.17,6720,level_2
-justice,2020-21,capital outlay on public works__office buildings,4059__1,6738.71,6720,6720,6195.9,level_2
-justice,2021-22,capital outlay on public works__office buildings,4059__1,3070.04,6195.9,6195.9,3448.72,level_2
 justice,2018-19,capital outlay on public works__general,4059__80,0,7700,7700,3500,level_2
 justice,2019-20,capital outlay on public works__general,4059__80,2080.22,3500,3500,3500,level_2
 justice,2020-21,capital outlay on public works__general,4059__80,2367.89,3500,3500,2956.5,level_2
@@ -376,10 +355,6 @@ justice,2018-19,labour & employment__labour__industrial relations,2230__1__101,2
 justice,2019-20,labour & employment__labour__industrial relations,2230__1__101,327.03,431.94,444.47,440.41,level_3
 justice,2020-21,labour & employment__labour__industrial relations,2230__1__101,355.84000000000003,440.41,504.02,492.75,level_3
 justice,2021-22,labour & employment__labour__industrial relations,2230__1__101,425.38,492.75,493.05,585.87,level_3
-justice,2018-19,capital outlay on public works__office buildings__construction - general pool accommodation,4059__1__101,0,7300,8100,7920,level_3
-justice,2019-20,capital outlay on public works__office buildings__construction - general pool accommodation,4059__1__101,4573.46,7920,10872.17,6720,level_3
-justice,2020-21,capital outlay on public works__office buildings__construction - general pool accommodation,4059__1__101,6722.66,6720,6720,0,level_3
-justice,2021-22,capital outlay on public works__office buildings__construction - general pool accommodation,4059__1__101,3070.04,0,0,0,level_3
 justice,2018-19,capital outlay on public works__general__construction - general pool accommodation,4059__80__101,0,7700,7700,3500,level_3
 justice,2019-20,capital outlay on public works__general__construction - general pool accommodation,4059__80__101,2080.22,3500,3500,3500,level_3
 justice,2020-21,capital outlay on public works__general__construction - general pool accommodation,4059__80__101,2367.89,3500,3500,0,level_3
