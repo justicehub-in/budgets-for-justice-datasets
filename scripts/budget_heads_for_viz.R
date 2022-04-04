@@ -47,10 +47,17 @@ budget_ts$head_title_updated <-
 
 budget_ts$level_num <- stringr::str_replace_all(string = budget_ts$level_col, pattern = "level_",replacement = "") %>% as.numeric()
 
-head_max_level <- budget_ts %>% group_by(head_title_updated) %>% summarise(max_level=max(level_num))
+head_min_level <- budget_ts %>% group_by(head_title_updated) %>% summarise(min_level=min(level_num))
 
-budget_ts <- left_join(budget_ts, head_max_level, by="head_title_updated")
-budget_ts_updated <- budget_ts[budget_ts$level_num==budget_ts$max_level,]
+budget_ts <- left_join(budget_ts, head_min_level, by="head_title_updated")
+budget_ts_updated <- budget_ts[budget_ts$level_num==budget_ts$min_level,]
+
+
+# Write file --------------------------------------------------------------
+
+readr::write_csv(budget_ts_updated,"datasets/state-budgets/assam/budget_timeseries_updated.csv")
+
+# Checks ------------------------------------------------------------------
 
 x <- budget_ts %>% 
   filter(year == "2018-19") %>% 
