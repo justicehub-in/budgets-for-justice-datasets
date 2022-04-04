@@ -52,6 +52,13 @@ head_min_level <- budget_ts %>% group_by(head_title_updated) %>% summarise(min_l
 budget_ts <- left_join(budget_ts, head_min_level, by="head_title_updated")
 budget_ts_updated <- budget_ts[budget_ts$level_num==budget_ts$min_level,]
 
+# Add display title for budget heads --------------------------------------
+budget_ts_updated$display_title <- budget_ts_updated$head_title_updated %>% 
+  stringr::str_replace_all(pattern = "__",replacement = " - ") %>% 
+  stringr::str_to_title() %>% 
+  stringr::str_trim()
+
+
 
 # Write file --------------------------------------------------------------
 
