@@ -58,6 +58,16 @@ budget_ts_updated$display_title <- budget_ts_updated$head_title_updated %>%
   stringr::str_to_title() %>% 
   stringr::str_trim()
 
+# Add budget head categories
+budget_head_categories <- readr::read_csv("datasets/state-budgets/assam/budget_head_categories.csv", col_types = cols())
+budget_ts_updated <-
+  left_join(
+    budget_ts_updated,
+    budget_head_categories,
+    by = c("budget_for" = "grant",
+           "head_title_updated" =
+             "head_title_updated")
+  ) 
 
 
 # Write file --------------------------------------------------------------
