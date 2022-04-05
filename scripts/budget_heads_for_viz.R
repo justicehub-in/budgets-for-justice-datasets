@@ -74,15 +74,13 @@ budget_ts_updated <-
 
 readr::write_csv(budget_ts_updated,"datasets/state-budgets/assam/budget_timeseries_updated.csv")
 
-# Checks ------------------------------------------------------------------
+# Create separate files for grants ----------------------------------------
+jails_file <- budget_ts_updated[budget_ts_updated$budget_for=="jails",]
+justice_file <- budget_ts_updated[budget_ts_updated$budget_for=="justice",]
+police_file <- budget_ts_updated[budget_ts_updated$budget_for=="police",]
 
-x <- budget_ts %>% 
-  filter(year == "2018-19") %>% 
-  group_by(head_title_updated) %>% 
-  summarise(la = length(unique(total_actuals)),
-            epy = length(unique(total_estimate_py)),
-            rpy = length(unique(total_revised_py)),
-            ecy = length(unique(total_estimate_cy)))
+readr::write_csv(jails_file,"datasets/state-budgets/assam/files-for-viz/jails.csv")
+readr::write_csv(justice_file,"datasets/state-budgets/assam/files-for-viz/justice.csv")
+readr::write_csv(police_file,"datasets/state-budgets/assam/files-for-viz/police.csv")
 
-x$sum <- x$la + x$epy + x$rpy + x$ecy
 
