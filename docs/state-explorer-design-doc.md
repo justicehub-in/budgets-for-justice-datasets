@@ -3,9 +3,13 @@
 
 ## Landing Page
 
-### Section 1 - Figures 
+### Section 1 - Figures
+
+![](https://raw.githubusercontent.com/justicehub-in/budgets-for-justice-datasets/63815a01809317fe92d98e6ba2c74b251cd2b8be/design/wireframes/landing-page-section-1.png)
 
 ### Section 2 - Summary
+
+![](https://github.com/justicehub-in/budgets-for-justice-datasets/raw/main/design/wireframes/landing-page-section-2.png)
 
 ### Section 3 - Announcement Section
 
@@ -13,7 +17,11 @@ For now, we will use this section to link our [Budget Guidebook](https://github.
 
 ### Section 4 - Platforms & Guidebooks
 
-### Section 4 - Resources
+![](https://github.com/justicehub-in/budgets-for-justice-datasets/raw/main/design/wireframes/landing-page-section-platforms.png)
+
+### Section 5 - Resources
+
+![](https://github.com/justicehub-in/budgets-for-justice-datasets/raw/main/design/wireframes/landing-page-section-resources.png)
 
 ---
 
@@ -21,6 +29,7 @@ For now, we will use this section to link our [Budget Guidebook](https://github.
 
 ### Section 1 - Grant Summary
 
+![](https://github.com/justicehub-in/budgets-for-justice-datasets/raw/main/design/wireframes/grant-summary.png)
 
 ### Section 2 - Grant Categories (Search Scheme)
 
