@@ -1,0 +1,5 @@
+library(readr)
+library(tidyr)
+summary_data <- readr::read_csv("docs/assam-grant-summary-overall.csv", col_types = cols())
+summary_data_wide <- tidyr::pivot_wider(data = summary_data, names_from = "Indicator",values_from = "Value",id_cols = c("Grant Number","Year"))
+readr::write_csv(summary_data_wide,"docs/summary_data_wide.csv")
