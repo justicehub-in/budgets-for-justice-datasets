@@ -106,7 +106,7 @@ get_all_cols <- function(){
     file_path <- glue::glue("{processed_file_path}{all_processed_files[[i]]}")
     budget_csv <- readr::read_csv(file_path, col_types = cols())
     csv_cols <- names(budget_csv)
-    cols_df <- data.frame("file_id"=all_raw_files[[i]],col_names=csv_cols)  
+    cols_df <- data.frame("file_id"=all_processed_files[[i]],col_names=csv_cols)  
     master_cols_df <- dplyr::bind_rows(master_cols_df, cols_df)  
   }
   return(master_cols_df)
