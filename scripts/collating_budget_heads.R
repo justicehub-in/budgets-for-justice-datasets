@@ -17,7 +17,8 @@ all_levels <- head_summary$level %>% unique()
 
 # Only include levels 1 to 6
 levels_to_include <- paste0("level_",2:6,"_code")
-head_summary_sub <- head_summary[head_summary$level %in% levels_to_include,]
+head_summary_sub <-
+  head_summary[head_summary$level %in% levels_to_include, ]
 
 # Only include where include_in_analysis is 1
 
@@ -64,14 +65,17 @@ for(j in 1:length(all_levels)){
     budget_data_sub$revised_py <- as.numeric(budget_data_sub$revised_py)
     budget_data_sub$estimate_cy <- as.numeric(budget_data_sub$estimate_cy)
     budget_data_agg <-
-      budget_data_sub %>% group_by(budget_for, year, head_title, level_code) %>% summarise(
-        total_actuals = sum(actuals),
-        total_estimate_py = sum(estimate_py),
-        total_revised_py = sum(revised_py),
-        total_estimate_cy = sum(estimate_cy)
+      budget_data_sub %>% 
+      group_by(budget_for, year, head_title, level_code) %>% 
+      summarise(
+        total_actuals = sum(actuals)/100,
+        total_estimate_py = sum(estimate_py)/100,
+        total_revised_py = sum(revised_py)/100,
+        total_estimate_cy = sum(estimate_cy)/100
       )
     budget_data_agg$level_col <- level_col
-    budget_timeseries <- dplyr::bind_rows(budget_timeseries,budget_data_agg)
+    budget_timeseries <-
+      dplyr::bind_rows(budget_timeseries, budget_data_agg)
     
     # For converting the aggregate dataset from wide to long format
     
@@ -99,8 +103,8 @@ for(j in 1:length(all_levels)){
 # We're removing all rows that start with this budget head and where the actual expenditure is NA. 
 # This will remove 5 rows from the final dataset
 
-heads_to_remove <- budget_timeseries$level_code[is.na(budget_timeseries$total_actuals)]
-budget_timeseries <- budget_timeseries[!budget_timeseries$level_code %in% heads_to_remove,]
+heads_to_remove <- budget_timeseries$head_title[is.na(budget_timeseries$total_actuals)]
+budget_timeseries <- budget_timeseries[!budget_timeseries$head_title %in% heads_to_remove,]
 readr::write_csv(budget_timeseries,"datasets/state-budgets/assam/budget_timeseries.csv")
 
 
