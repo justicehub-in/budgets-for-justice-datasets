@@ -1,5 +1,5 @@
 grant,head_title_updated,category
-police,police,total
+police,police,revenue expenditure
 police,capital outlay on police,capital outlay
 police,police__direction and administration,direction and administration
 police,police__education and training,education and training
@@ -439,7 +439,7 @@ police,capital outlay on police__state police__police training__payment for prof
 police,"capital outlay on police__police housing__upgration of standard of administration, award of thirteenth finance commission__police housing__major works",capital outlay
 police,"capital outlay on police__police housing__upgration of standard of administration, award of thirteenth finance commission__police training__major works",capital outlay
 police,capital outlay on police__state police__anti-corruption branch__major works,capital outlay
-justice,administration of justice,total
+justice,administration of justice,revenue expenditure
 justice,taxes on vehicles,taxes on vehicles
 justice,labour & employment__labour,labour and employment
 justice,capital outlay on public works__general,capital outlay
@@ -613,7 +613,7 @@ justice,"capital outlay on public works__office buildings__construction - genera
 justice,capital outlay on housing__government residential buildings__other housing programme (gad)__administration of justice__works__major works,capital outlay
 justice,capital outlay on housing__government residential buildings__other housing programme (gad)__administration of justice__central share (block grant)__major works,capital outlay
 justice,capital outlay on housing__government residential buildings__construction general pool accomodation__administration of justice__works__major works,capital outlay
-jails,jails,total
+jails,jails,revenue expenditure
 jails,jails__direction and administration,direction and administration
 jails,jails__jails,jails
 jails,jails__other expenditure,other expenditure
@@ -683,3 +683,15 @@ jails,capital outlay on public works__office buildings__construction - general p
 jails,capital outlay on public works__office buildings__construction - general pool accommodation__jails__genl. security related expenditure__major works,capital outlay
 jails,"capital outlay on public works__office buildings__construction - general pool accommodation__jails__works (construction of 11 numbers of staff quarters & expenses on construction of prisoners barrack, kitchen, dining room, latrine, master drain, etc.)__major works",capital outlay
 jails,capital outlay on public works__office buildings__construction - general pool accommodation__district jails__major works,capital outlay
+jails,capital outlay on public works__office buildings,capital outlay
+jails,capital outlay on public works__office buildings__construction - general pool accommodation,capital outlay
+justice,capital outlay on public works__office buildings,capital outlay
+justice,capital outlay on public works__office buildings__construction - general pool accommodation,capital outlay
+jails,capital outlay on public works__office buildings__construction - general pool accommodation__head quarters establishment,capital outlay
+jails,capital outlay on public works__office buildings__construction - general pool accommodation__head quarters establishment__major works,capital outlay
+justice,capital outlay on housing__government residential buildings__other housing programme__administration of justice__works__major works,capital outlay
+justice,capital outlay on housing__government residential buildings__other housing programme__administration of justice__works,capital outlay
+justice,capital outlay on housing__government residential buildings__other housing programme__administration of justice__central share (block grant)__major works,capital outlay
+justice,capital outlay on housing__government residential buildings__other housing programme__administration of justice__central share (block grant),capital outlay
+justice,capital outlay on housing__government residential buildings__other housing programme__administration of justice,capital outlay
+justice,capital outlay on housing__government residential buildings__other housing programme,capital outlay
