@@ -8,8 +8,12 @@ budget_ts <- readr::read_csv("datasets/state-budgets/assam/budget_timeseries.csv
 # Update budget title heads for certain codes
 
 code_with_multiple_titles <-
-  budget_ts %>% group_by(head_title, level_code) %>% summarise(total = n()) %>% filter(total ==
-                                                                                         2) %>% pull(level_code) %>% unique()
+  budget_ts %>% 
+  group_by(head_title, level_code) %>% 
+  summarise(total = n()) %>% 
+  filter(total == 2) %>% 
+  pull(level_code) %>% 
+  unique()
 
 budget_ts$head_title_updated[budget_ts$level_code=="4216__1__700"] <- "capital outlay on housing__government residential buildings__other housing programme"
 budget_ts$head_title_updated[budget_ts$level_code=="4216__1__700__1501"] <- "capital outlay on housing__government residential buildings__other housing programme__administration of justice"
@@ -45,16 +49,30 @@ budget_ts$head_title_updated <-
 
 # Check for value of heads at each level ----------------------------------
 
-budget_ts$level_num <- stringr::str_replace_all(string = budget_ts$level_col, pattern = "level_",replacement = "") %>% as.numeric()
+budget_ts$level_num <-
+  stringr::str_replace_all(
+    string = budget_ts$level_col,
+    pattern = "level_",
+    replacement = ""
+  ) %>% as.numeric()
 
-head_min_level <- budget_ts %>% group_by(head_title_updated) %>% summarise(min_level=min(level_num))
+head_min_level <-
+  budget_ts %>% 
+  group_by(head_title_updated) %>% 
+  summarise(min_level = min(level_num))
 
-budget_ts <- left_join(budget_ts, head_min_level, by="head_title_updated")
-budget_ts_updated <- budget_ts[budget_ts$level_num==budget_ts$min_level,]
+budget_ts <-
+  left_join(budget_ts, head_min_level, by = "head_title_updated")
+
+budget_ts$ref_id <- 1:nrow(budget_ts)
+
+budget_ts_updated <-
+  budget_ts[budget_ts$level_num == budget_ts$min_level, ]
 
 # Add display title for budget heads --------------------------------------
+
 budget_ts_updated$display_title <- budget_ts_updated$head_title_updated %>% 
-  stringr::str_replace_all(pattern = "__",replacement = " - ") %>% 
+  stringr::str_replace_all(pattern = "__",replacement = " -> ") %>% 
   stringr::str_to_title() %>% 
   stringr::str_trim()
 
@@ -68,6 +86,15 @@ budget_ts_updated <-
            "head_title_updated" =
              "head_title_updated")
   ) 
+
+
+# Add slug for B4J URL's --------------------------------------
+budget_ts_updated$slug <- budget_ts_updated$head_title_updated %>%
+  stringr::str_replace_all(pattern = " ",replacement = "_") %>%
+  stringr::str_replace_all(pattern = "__",replacement = "_") %>%
+  stringr::str_to_lower() %>%
+  stringr::str_trim()
+
 
 
 # Write file --------------------------------------------------------------
