@@ -23,7 +23,7 @@ A time-series graph for budget heads which include the Budget, Revised and Actua
 2. In the past, we have developed [budget explorers](https://assam2021.openbudgetsindia.org/en/expenditure/all-grants/grant-no-3-administration-of-justice/) through which a user can view the budgets released under each head. 
 3. The budget heads at all levels are not common between years, hence it's hard to compare the budget across years for heads that don't match. 
 4. This [file](https://github.com/justicehub-in/budgets-for-justice-datasets/blob/main/datasets/state-budgets/assam/level_summary.csv) details the consistency in budget heads across years. The similarity between heads as we move deep in the hierarchy (from L2 to L10). _[Google Sheet](https://docs.google.com/spreadsheets/d/1eaCiyHIecujo0-waPDk4szL6icWT1RBmdoC6aIhEvsc/edit)_
-5. For the three grants which we have selected for analysing the law and justice related budgets i.e. Jails, Justice, and Police, we get an average match of **55% at L5 (Detailed head)**. This means that if there are 100 heads at L5, we could only match 55 heads. 
+5. For the three grants which we have selected for analysing the law and justice related budgets i.e. Jails, Justice, and Police, we get an average match of **55% at L5 (Detailed head)**. This means that if there are 100 heads at L5, we could only match 55 heads across all years. 
 6. We have curated all heads at all levels across the last 4 years (till 2021) in this [file](https://docs.google.com/spreadsheets/d/16fl7icGznIEgJQ_g5MQTiqgROiDB9cwGXgC-oiFh024/edit#gid=414449477). 
 
 
