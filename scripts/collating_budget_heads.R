@@ -3,9 +3,16 @@ source("scripts/functions.R")
 
 # Which heads to include --------------------------------------------------
 
-head_summary <- readr::read_csv("datasets/state-budgets/assam/comparing_head_codes_across_years.csv", col_types = cols())
-cols_to_check <- c("2018-19","2019-20","2020-21","2021-22")
+head_summary <-
+  readr::read_csv(
+    "datasets/state-budgets/assam/comparing_head_codes_across_years_2022.csv",
+    col_types = cols()
+  )
+cols_to_check <-
+  c("2018-19", "2019-20", "2020-21", "2021-22", "2022-23")
+
 head_summary$include_in_analysis <- 1
+
 for(i in 1:nrow(head_summary)){
   col_status <- head_summary[i,cols_to_check] %>% t()
   if(FALSE %in% col_status){
@@ -17,17 +24,19 @@ all_levels <- head_summary$level %>% unique()
 
 # Only include levels 1 to 6
 levels_to_include <- paste0("level_",2:6,"_code")
+
 head_summary_sub <-
   head_summary[head_summary$level %in% levels_to_include, ]
 
 # Only include where include_in_analysis is 1
 
-head_summary_sub_sub <- head_summary_sub[head_summary_sub$include_in_analysis == 1,]
+head_summary_sub_sub <-
+  head_summary_sub[head_summary_sub$include_in_analysis == 1, ]
 
 # Creating grant wise time series -----------------------------------------------
 
 all_heads <-
-  readr::read_csv("datasets/state-budgets/assam/all_heads_list.csv",
+  readr::read_csv("datasets/state-budgets/assam/all_heads_list_2022.csv",
                   col_types = cols(.default = "c"))
 all_categories <- unique(head_summary_sub_sub$category)
 all_levels <- unique(head_summary_sub_sub$level)
@@ -103,14 +112,16 @@ for(j in 1:length(all_levels)){
 # We're removing all rows that start with this budget head and where the actual expenditure is NA. 
 # This will remove 5 rows from the final dataset
 
-heads_to_remove <- budget_timeseries$head_title[is.na(budget_timeseries$total_actuals)]
-budget_timeseries <- budget_timeseries[!budget_timeseries$head_title %in% heads_to_remove,]
-readr::write_csv(budget_timeseries,"datasets/state-budgets/assam/budget_timeseries.csv")
+heads_to_remove <-
+  budget_timeseries$head_title[is.na(budget_timeseries$total_actuals)]
+budget_timeseries <-
+  budget_timeseries[!budget_timeseries$head_title %in% heads_to_remove, ]
+readr::write_csv(budget_timeseries,"datasets/state-budgets/assam/budget_timeseries_2022.csv")
 
 
 # Update code level summary -----------------------------------------------
 
-code_level_summary <- readr::read_csv("datasets/state-budgets/assam/code_level_summary.csv", col_types = cols())
+code_level_summary <- readr::read_csv("datasets/state-budgets/assam/code_level_summary_2022.csv", col_types = cols())
 
 # Only include till level 6
 code_level_summary_l6 <- code_level_summary[code_level_summary$level %in% paste0("level_",2:6,"_code"),]
@@ -124,6 +135,9 @@ code_level_summary_l6_wide <-
     values_from = "percent_common"
   )
 
-readr::write_csv(code_level_summary_l6_wide, "datasets/state-budgets/assam/major_head_coverage.csv")
+readr::write_csv(
+  code_level_summary_l6_wide,
+  "datasets/state-budgets/assam/major_head_coverage_2022.csv"
+)
 
-knitr::kable(code_level_summary_l6_wide,format = "pipe") %>% clipr::write_clip()
+knitr::kable(code_level_summary_l6_wide, format = "pipe") %>% clipr::write_clip()

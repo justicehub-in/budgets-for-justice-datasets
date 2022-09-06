@@ -6,7 +6,7 @@ source("scripts/functions.R")
 
 
 # Declaring variables -----------------------------------------------------
-years <- c("2018-19", "2019-20", "2020-21","2021-22")
+years <- c("2018-19", "2019-20", "2020-21","2021-22","2022-23")
 organisations <-
   paste0("assam-budget-", years)
 
@@ -273,18 +273,33 @@ combined_heads <-
     ) %>% stringr::str_to_lower() %>% stringr::str_squish()
   )
 
-combined_heads$budget_for <- stringr::str_replace_all(string = combined_heads$file_id,pattern = "assam-budget.*_",replacement = "")
-combined_heads$budget_for <- stringr::str_replace_all(string = combined_heads$budget_for,pattern = "\\.csv",replacement = "")
-combined_heads$year <- stringr::str_replace_all(string = combined_heads$file_id,pattern = "assam-budget-",replacement = "")
-combined_heads$year <- stringr::str_replace_all(string = combined_heads$year,pattern = "_.*",replacement = "")
+combined_heads$budget_for <-
+  stringr::str_replace_all(string = combined_heads$file_id,
+                           pattern = "assam-budget.*_",
+                           replacement = "")
+combined_heads$budget_for <-
+  stringr::str_replace_all(
+    string = combined_heads$budget_for,
+    pattern = "\\.csv",
+    replacement = ""
+  )
+combined_heads$year <-
+  stringr::str_replace_all(string = combined_heads$file_id,
+                           pattern = "assam-budget-",
+                           replacement = "")
+combined_heads$year <-
+  stringr::str_replace_all(string = combined_heads$year,
+                           pattern = "_.*",
+                           replacement = "")
 
-all_categories <- c("jails","justice","police")
-all_levels <- paste0("level_",seq(2,10),"_code")
+all_categories <- c("jails", "justice", "police")
+all_levels <- paste0("level_", seq(2, 10), "_code")
 all_years <- years
 master_head_level_df <- c()
 all_year_status <- c()
 for(i in 1:length(all_categories)){
-  category_rows <- combined_heads[combined_heads$budget_for == all_categories[[i]],]
+  category_rows <-
+    combined_heads[combined_heads$budget_for == all_categories[[i]], ]
   all_major_heads <- category_rows$`Major Head Code` %>% unique()
   for(m in 1:length(all_major_heads)){
     category_major_rows <- category_rows[category_rows$`Major Head Code` == all_major_heads[[m]],]
@@ -309,7 +324,8 @@ for(i in 1:length(all_categories)){
       head_distribution <-
         level_rows %>% group_by(level,major_head_code) %>% summarise(total = n())
       total_values <- nrow(head_distribution)
-      common_values <- nrow(head_distribution[head_distribution$total==4,])
+      common_values <-
+        nrow(head_distribution[head_distribution$total == 5,])
       percent_common <- round(common_values/total_values*100,2)
       head_level_df <- data.frame("category"=all_categories[[i]],
                                   "major_head" = all_major_heads[[m]],
@@ -323,9 +339,12 @@ for(i in 1:length(all_categories)){
   }  
   }
   
-readr::write_csv(master_head_level_df,"datasets/state-budgets/assam/code_level_summary.csv")
-readr::write_csv(all_year_status,"datasets/state-budgets/assam/comparing_head_codes_across_years.csv")
-readr::write_csv(combined_heads,"datasets/state-budgets/assam/all_heads_list.csv")
+# readr::write_csv(master_head_level_df,"datasets/state-budgets/assam/code_level_summary.csv")
+# readr::write_csv(all_year_status,"datasets/state-budgets/assam/comparing_head_codes_across_years.csv")
+# readr::write_csv(combined_heads,"datasets/state-budgets/assam/all_heads_list.csv")
 
+readr::write_csv(master_head_level_df,"datasets/state-budgets/assam/code_level_summary_2022.csv")
+readr::write_csv(all_year_status,"datasets/state-budgets/assam/comparing_head_codes_across_years_2022.csv")
+readr::write_csv(combined_heads,"datasets/state-budgets/assam/all_heads_list_2022.csv")
 
 

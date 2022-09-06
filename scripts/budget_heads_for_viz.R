@@ -1,7 +1,9 @@
 source("scripts/libraries.R")
 source("scripts/functions.R")
 
-budget_ts <- readr::read_csv("datasets/state-budgets/assam/budget_timeseries.csv", col_types = cols())
+budget_ts <-
+  readr::read_csv("datasets/state-budgets/assam/budget_timeseries_2022.csv",
+                  col_types = cols())
 
 # Format Budget Heads -----------------------------------------------------
 
@@ -77,7 +79,10 @@ budget_ts_updated$display_title <- budget_ts_updated$head_title_updated %>%
   stringr::str_trim()
 
 # Add budget head categories
-budget_head_categories <- readr::read_csv("datasets/state-budgets/assam/budget_head_categories.csv", col_types = cols())
+budget_head_categories <-
+  readr::read_csv("datasets/state-budgets/assam/budget_head_categories.csv",
+                  col_types = cols())
+
 budget_ts_updated <-
   left_join(
     budget_ts_updated,
@@ -99,15 +104,15 @@ budget_ts_updated$slug <- budget_ts_updated$head_title_updated %>%
 
 # Write file --------------------------------------------------------------
 
-readr::write_csv(budget_ts_updated,"datasets/state-budgets/assam/budget_timeseries_updated.csv")
+readr::write_csv(budget_ts_updated,"datasets/state-budgets/assam/budget_timeseries_updated_2022.csv")
 
 # Create separate files for grants ----------------------------------------
 jails_file <- budget_ts_updated[budget_ts_updated$budget_for=="jails",]
 justice_file <- budget_ts_updated[budget_ts_updated$budget_for=="justice",]
 police_file <- budget_ts_updated[budget_ts_updated$budget_for=="police",]
 
-readr::write_csv(jails_file,"datasets/state-budgets/assam/files-for-viz/jails.csv")
-readr::write_csv(justice_file,"datasets/state-budgets/assam/files-for-viz/justice.csv")
-readr::write_csv(police_file,"datasets/state-budgets/assam/files-for-viz/police.csv")
+readr::write_csv(jails_file,"datasets/state-budgets/assam/files-for-viz/jails_2022.csv")
+readr::write_csv(justice_file,"datasets/state-budgets/assam/files-for-viz/justice_2022.csv")
+readr::write_csv(police_file,"datasets/state-budgets/assam/files-for-viz/police_2022.csv")
 
 
