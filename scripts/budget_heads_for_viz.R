@@ -111,8 +111,8 @@ jails_file <- budget_ts_updated[budget_ts_updated$budget_for=="jails",]
 justice_file <- budget_ts_updated[budget_ts_updated$budget_for=="justice",]
 police_file <- budget_ts_updated[budget_ts_updated$budget_for=="police",]
 
-readr::write_csv(jails_file,"datasets/state-budgets/assam/files-for-viz/jails_2022.csv")
-readr::write_csv(justice_file,"datasets/state-budgets/assam/files-for-viz/justice_2022.csv")
-readr::write_csv(police_file,"datasets/state-budgets/assam/files-for-viz/police_2022.csv")
+readr::write_csv(jails_file,"datasets/state-budgets/assam/files-for-viz/2022/jails_2022.csv")
+readr::write_csv(justice_file,"datasets/state-budgets/assam/files-for-viz/2022/justice_2022.csv")
+readr::write_csv(police_file,"datasets/state-budgets/assam/files-for-viz/2022/police_2022.csv")
 
 
