@@ -87,7 +87,7 @@ police,police__other expenditure__expenditure in connection with general electio
 police,police__other expenditure__expenditure in connection with general election__charges for conduct of panchayat election,other expenditure
 police,police__welfare of police personnel__amenities,welfare of police personnel
 police,police__modernisation of police force__national scheme for modernisation of police & other forces__crime & criminal tracking network & system and enhanced initiative for ciminal tracking network & system,modernisation of police force
-police,police__direction and administration__head quarters establishment__mobile app shield 8- citizen security management system,direction and administration
+police,police__direction and administration__head quarters establishment__mobile app shield 8- citizen security management system,Citizen Security Mobile App
 police,police__criminal investigation and vigilance__anti-corruption branch,criminal investigation and vigilance - anti-corruption branch
 police,police__criminal investigation and vigilance__general security related expenditure__logistic support to cbi,criminal investigation and vigilance
 police,police__criminal investigation and vigilance__general security related expenditure__logistic support to army conducting operation,criminal investigation and vigilance
@@ -408,7 +408,7 @@ police,police__modernisation of police force__national scheme for modernisation 
 police,police__modernisation of police force__national scheme for modernisation of police & other forces__crime & criminal tracking network & system and enhanced initiative for ciminal tracking network & system__payment for professional and special services,modernisation of police force
 police,police__modernisation of police force__national scheme for modernisation of police & other forces__crime & criminal tracking network & system and enhanced initiative for ciminal tracking network & system__machinery and equipment / tools & plants,modernisation of police force
 police,police__modernisation of police force__national scheme for modernisation of police & other forces__crime & criminal tracking network & system and enhanced initiative for ciminal tracking network & system__materials & supplies,modernisation of police force
-police,police__direction and administration__head quarters establishment__mobile app shield 8- citizen security management system__other charges,direction and administration
+police,police__direction and administration__head quarters establishment__mobile app shield 8- citizen security management system__other charges,Citizen Security Mobile App
 police,police__direction and administration__police range__minor works,direction and administration
 police,police__special police__armed police battalions__minor works,special police
 police,police__direction and administration__head quarters establishment__minor works,direction and administration
@@ -474,7 +474,7 @@ justice,"administration of justice__legal advisers and counsels__the national la
 justice,"administration of justice__other expenditure__judicial academy, assam","other expenditure - judicial academy, assam"
 justice,administration of justice__legal advisers and counsels__other lawyers,legal advisers and counsels
 justice,"administration of justice__other expenditure__judicial academy, assam__capacity building","other expenditure - judicial academy, assam"
-justice,administration of justice__other expenditure__legal aid to the poor,other expenditure - legal aid to the poor
+justice,administration of justice__other expenditure__legal aid to the poor,other expenditure - legal aid
 justice,administration of justice__other expenditure__law commission,other expenditure -law commission
 justice,administration of justice__other expenditure__translation of central laws,other expenditure - translation of central laws
 justice,administration of justice__other expenditure__upgradation of standard of administration-14th finance commission,other expenditure
@@ -553,25 +553,25 @@ justice,administration of justice__legal advisers and counsels__public prosecuto
 justice,administration of justice__legal advisers and counsels__advocate general__payment for professional and special services,legal advisers and counsels
 justice,administration of justice__other expenditure__law research institute eastern region__office expenses,other expenditure
 justice,"administration of justice__other expenditure__judicial academy, assam__capacity building__grants-in-aid general (non-salary)","other expenditure - judicial academy, assam"
-justice,administration of justice__other expenditure__legal aid to the poor__salaries,other expenditure - legal aid to the poor
-justice,administration of justice__other expenditure__legal aid to the poor__travel expenses,other expenditure - legal aid to the poor
-justice,administration of justice__other expenditure__legal aid to the poor__office expenses,other expenditure - legal aid to the poor
+justice,administration of justice__other expenditure__legal aid to the poor__salaries,other expenditure - legal aid
+justice,administration of justice__other expenditure__legal aid to the poor__travel expenses,other expenditure - legal aid
+justice,administration of justice__other expenditure__legal aid to the poor__office expenses,other expenditure - legal aid
 justice,administration of justice__other expenditure__law commission__salaries,other expenditure -law commission
 justice,administration of justice__other expenditure__law commission__travel expenses,other expenditure -law commission
 justice,administration of justice__other expenditure__law commission__office expenses,other expenditure -law commission
 justice,administration of justice__other expenditure__translation of central laws__salaries,other expenditure - translation of central laws
 justice,administration of justice__other expenditure__translation of central laws__travel expenses,other expenditure - translation of central laws
 justice,administration of justice__other expenditure__translation of central laws__office expenses,other expenditure - translation of central laws
-justice,administration of justice__other expenditure__legal aid to the poor__wages,other expenditure - legal aid to the poor
-justice,administration of justice__other expenditure__legal aid to the poor__payment for professional and special services,other expenditure - legal aid to the poor
-justice,administration of justice__other expenditure__legal aid to the poor__materials & supplies,other expenditure - legal aid to the poor
+justice,administration of justice__other expenditure__legal aid to the poor__wages,other expenditure - legal aid
+justice,administration of justice__other expenditure__legal aid to the poor__payment for professional and special services,other expenditure - legal aid
+justice,administration of justice__other expenditure__legal aid to the poor__materials & supplies,other expenditure - legal aid
 justice,administration of justice__other expenditure__law commission__wages,other expenditure -law commission
-justice,administration of justice__other expenditure__legal aid to the poor__other charges,other expenditure - legal aid to the poor
+justice,administration of justice__other expenditure__legal aid to the poor__other charges,other expenditure - legal aid
 justice,administration of justice__other expenditure__law commission__other charges,other expenditure -law commission
 justice,administration of justice__other expenditure__law commission__minor works,other expenditure -law commission
 justice,administration of justice__other expenditure__translation of central laws__other charges,other expenditure - translation of central laws
-justice,"administration of justice__other expenditure__legal aid to the poor__rents, rates & taxes / royalty",other expenditure - legal aid to the poor
-justice,administration of justice__other expenditure__legal aid to the poor__hospitality expenses / sumptuary allowances etc,other expenditure - legal aid to the poor
+justice,"administration of justice__other expenditure__legal aid to the poor__rents, rates & taxes / royalty",other expenditure - legal aid
+justice,administration of justice__other expenditure__legal aid to the poor__hospitality expenses / sumptuary allowances etc,other expenditure - legal aid
 justice,administration of justice__other expenditure__upgradation of standard of administration-14th finance commission__other charges,other expenditure
 justice,administration of justice__other expenditure__translation of central laws__maintenance,other expenditure - translation of central laws
 justice,administration of justice__other expenditure__translation of central laws__payment for professional and special services,other expenditure - translation of central laws
@@ -695,3 +695,54 @@ justice,capital outlay on housing__government residential buildings__other housi
 justice,capital outlay on housing__government residential buildings__other housing programme__administration of justice__central share (block grant),capital outlay
 justice,capital outlay on housing__government residential buildings__other housing programme__administration of justice,capital outlay
 justice,capital outlay on housing__government residential buildings__other housing programme,capital outlay
+justice,administration of justice__other expenditure__legal aid,other expenditure - legal aid
+justice,administration of justice__other expenditure__legal aid__salaries,other expenditure - legal aid
+justice,administration of justice__other expenditure__legal aid__travel expenses,other expenditure - legal aid
+justice,administration of justice__other expenditure__legal aid__office expenses,other expenditure - legal aid
+justice,administration of justice__other expenditure__legal aid__wages,other expenditure - legal aid
+justice,administration of justice__other expenditure__legal aid__payment for professional and special services,other expenditure - legal aid
+justice,administration of justice__other expenditure__legal aid__materials & supplies,other expenditure - legal aid
+justice,administration of justice__other expenditure__legal aid__other charges,other expenditure - legal aid
+justice,"administration of justice__other expenditure__legal aid__rents, rates & taxes / royalty",other expenditure - legal aid
+justice,administration of justice__other expenditure__legal aid__hospitality expenses / sumptuary allowances etc,other expenditure - legal aid
+police,police__education and training__police training college & institutes,education and training
+police,police__education and training__police training college & institutes__salaries,education and training
+police,police__education and training__police training college & institutes__travel expenses,education and training
+police,police__education and training__police training college & institutes__office expenses,education and training
+police,police__education and training__police training college & institutes__minor works,education and training
+police,police__education and training__police training college & institutes__machinery and equipment / tools & plants,education and training
+police,police__education and training__police training college & institutes__materials & supplies,education and training
+police,police__education and training__police training college & institutes__payment for professional and special services,education and training
+police,police__education and training__police training college & institutes__other charges,education and training
+police,police__education and training__police training college & institutes__maintenance,education and training
+police,capital outlay on police__state police__police training college & institutes,capital outlay
+police,police__direction and administration__head quarters establishment__mobile app - citizen security management system,Citizen Security Mobile App
+police,police__other expenditure__relief operation in connection with disturbances__operation against militant raising of assam commando battalion,other expenditure - relief operation in connection with disturbances
+police,police__other expenditure__relief operation in connection with disturbances__operation against militant raising of assam commando battalion__machinery and equipment / tools & plants,other expenditure - relief operation in connection with disturbances
+police,police__other expenditure__relief operation in connection with disturbances__operation against militant raising of assam commando battalion__materials & supplies,other expenditure - relief operation in connection with disturbances
+police,police__other expenditure__relief operation in connection with disturbances__operation against militant raising of assam commando battalion__minor works,other expenditure - relief operation in connection with disturbances
+police,police__other expenditure__relief operation in connection with disturbances__operation against militant raising of assam commando battalion__office expenses,other expenditure - relief operation in connection with disturbances
+police,police__other expenditure__relief operation in connection with disturbances__operation against militant raising of assam commando battalion__other charges,other expenditure - relief operation in connection with disturbances
+police,police__other expenditure__relief operation in connection with disturbances__operation against militant raising of assam commando battalion__salaries,other expenditure - relief operation in connection with disturbances
+police,police__other expenditure__relief operation in connection with disturbances__operation against militant raising of assam commando battalion__travel expenses,other expenditure - relief operation in connection with disturbances
+police,police__other expenditure__relief operation in connection with disturbances__raising of new battalion (assam police task force / new indian reserve battalion),other expenditure - relief operation in connection with disturbances
+police,police__other expenditure__relief operation in connection with disturbances__raising of new battalion (assam police task force / new indian reserve battalion)__machinery and equipment / tools & plants,other expenditure - relief operation in connection with disturbances
+police,police__other expenditure__relief operation in connection with disturbances__raising of new battalion (assam police task force / new indian reserve battalion)__minor works,other expenditure - relief operation in connection with disturbances
+police,police__other expenditure__relief operation in connection with disturbances__raising of new battalion (assam police task force / new indian reserve battalion)__office expenses,other expenditure - relief operation in connection with disturbances
+police,police__other expenditure__relief operation in connection with disturbances__raising of new battalion (assam police task force / new indian reserve battalion)__other charges,other expenditure - relief operation in connection with disturbances
+police,police__other expenditure__relief operation in connection with disturbances__raising of new battalion (assam police task force / new indian reserve battalion)__salaries,other expenditure - relief operation in connection with disturbances
+police,police__other expenditure__relief operation in connection with disturbances__raising of new battalion (assam police task force / new indian reserve battalion)__travel expenses,other expenditure - relief operation in connection with disturbances
+police,capital outlay on police__state police__police training college & institutes__payment for professional and special services,capital outlay
+police,police__direction and administration__head quarters establishment__mobile app - citizen security management system__other charges,Citizen Security Mobile App
+police,police__other expenditure__relief operation in connection with disturbances__operation against militant raising of assam commando battalion__maintenance,other expenditure - relief operation in connection with disturbances
+police,police__other expenditure__relief operation in connection with disturbances__raising of new battalion (assam police task force / new indian reserve battalion)__maintenance,other expenditure - relief operation in connection with disturbances
+police,police__other expenditure__relief operation in connection with disturbances__raising of new battalion (assam police task force / new indian reserve battalion)__materials & supplies,other expenditure - relief operation in connection with disturbances
+police,police__railway police__railway police and supervising staff,railway police
+police,police__railway police__railway police and supervising staff__maintenance,railway police
+police,police__railway police__railway police and supervising staff__materials & supplies,railway police
+police,police__railway police__railway police and supervising staff__minor works,railway police
+police,police__railway police__railway police and supervising staff__office expenses,railway police
+police,police__railway police__railway police and supervising staff__other charges,railway police
+police,"police__railway police__railway police and supervising staff__rents, rates & taxes / royalty",railway police
+police,police__railway police__railway police and supervising staff__salaries,railway police
+police,police__railway police__railway police and supervising staff__travel expenses,railway police
