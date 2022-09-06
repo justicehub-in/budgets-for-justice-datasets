@@ -49,6 +49,21 @@ _All budget heads are assigned a code. We can also use the code to compare heads
 |police   |       2055|          100|        92.31|        93.65|        60.00|        50.00|
 |police   |       4055|          100|       100.00|        37.50|        23.91|        20.41|
 
+#### Including 2022
+
+|category | major_head| level_2_code| level_3_code| level_4_code| level_5_code| level_6_code|
+|:--------|----------:|------------:|------------:|------------:|------------:|------------:|
+|jails    |       2056|          100|        80.00|        75.00|        70.00|        78.33|
+|jails    |       4059|          100|         0.00|         0.00|         0.00|         0.00|
+|justice  |       2014|          100|        71.43|        86.96|        76.00|        69.57|
+|justice  |       2041|          100|       100.00|       100.00|       100.00|        62.50|
+|justice  |       2230|          100|       100.00|       100.00|       100.00|        85.19|
+|justice  |       4059|          100|         0.00|         0.00|         0.00|         0.00|
+|justice  |       4216|          100|        66.67|        66.67|        50.00|        42.86|
+|police   |       2055|          100|        92.31|        93.65|        56.52|        46.33|
+|police   |       4055|          100|        66.67|        36.00|        22.00|        18.87|
+
+
 ### Year wise budget information of selected budget heads
 
 The file is available [here](https://github.com/justicehub-in/budgets-for-justice-datasets/blob/main/datasets/state-budgets/assam/budget_timeseries.csv)
